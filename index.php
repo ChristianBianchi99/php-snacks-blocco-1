@@ -31,7 +31,16 @@ $matches=[
         'home_score' => 80,
         'visiting_score' => 69,
     ],
-]
+];
+// SNACK 2
+$name = $_GET['name'];
+$email = $_GET['email'];
+$age = intval($_GET['age']);
+if(strlen($name) > 3 && strpos($email, '@') !== false && strpos($email, '.') !== false && is_int($age) === true){
+    $response= 'Accesso riuscito';
+} else {
+    $response= 'Accesso negato';
+};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +51,7 @@ $matches=[
 </head>
 <body>
     <!-- SNACK 1 -->
+    <h2>SNACK 1</h2>
     <div class="snack-1">
         <ul>
             <?php foreach($matches as $match) { ?>
@@ -51,5 +61,16 @@ $matches=[
             <?php } ?>
         </ul>
     </div>
+    <hr>
+    <!-- SNACK 2 -->
+    <h2>SNACK 2</h2>
+    <form action="index.php" method="GET">
+        <input type="text" name="name" id="name" placeholder="name">
+        <input type="text" name="email" id="email" placeholder="email">
+        <input type="number" name="age" id="age" placeholder="age">
+        <input type="submit" value="INVIA">
+    </form>
+    <?php echo $response ?>
+    <hr>
 </body>
 </html>
