@@ -41,6 +41,45 @@ if(strlen($name) > 3 && strpos($email, '@') !== false && strpos($email, '.') !==
 } else {
     $response= 'Accesso negato';
 };
+// SNACK 3
+$posts = [
+    '10/01/2019' => [
+        [
+            'title' => 'Post 1',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 1'
+        ],
+        [
+            'title' => 'Post 2',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 2'
+        ],
+    ],
+    '10/02/2019' => [
+        [
+            'title' => 'Post 3',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 3'
+        ]
+    ],
+    '15/05/2019' => [
+        [
+            'title' => 'Post 4',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 4'
+        ],
+        [
+            'title' => 'Post 5',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 5'
+        ],
+        [
+            'title' => 'Post 6',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 6'
+        ]
+    ],
+];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,6 +110,26 @@ if(strlen($name) > 3 && strpos($email, '@') !== false && strpos($email, '.') !==
         <input type="submit" value="INVIA">
     </form>
     <?php echo $response ?>
+    <hr>
+    <!-- SNACK 3 -->
+    <h2>SNACK 3</h2>
+    <?php foreach($posts as $date => $posts_by_date){ ?>
+        <h4><?php echo $date ?></h4>
+        <ul>
+            <?php foreach($posts_by_date as $post){ ?>
+                <li>
+                    <strong>Title: </strong><?php echo $post['title'] ?>
+                </li>
+                <li>
+                    <strong>Author: </strong><?php echo $post['author'] ?>
+                </li>
+                <li>
+                    <strong>Text: </strong><?php echo $post['text'] ?>
+                </li>
+                <br>
+            <?php } ?>
+        </ul>
+    <?php } ?>
     <hr>
 </body>
 </html>
