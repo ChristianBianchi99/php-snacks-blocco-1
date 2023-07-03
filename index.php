@@ -80,6 +80,14 @@ $posts = [
         ]
     ],
 ];
+// SNACK 4
+$random_numbers = [];
+while(count($random_numbers) < 15){
+    $number = rand( 1, 100);
+    if(!in_array($number, $random_numbers)){
+        $random_numbers[] = $number;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -131,5 +139,10 @@ $posts = [
         </ul>
     <?php } ?>
     <hr>
+    <!-- SNACK 4 -->
+    <h2>SNACK 4</h2>
+    <?php foreach($random_numbers as $number){ ?>
+        <?php echo $number ?>
+    <?php } ?>
 </body>
 </html>
